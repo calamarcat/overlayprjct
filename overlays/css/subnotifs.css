@@ -1,0 +1,115 @@
+@keyframes heartthrob {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    height: 50px;
+  }
+  12% {
+    opacity: 1;
+    height: 120px;
+  }
+  15% {
+    height: 110px;
+  }
+  60% {
+    opacity: 0.9;
+  }
+  65% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  75% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  85% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes textfade {
+  0% {
+    visibility: visible;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+#notifications {
+  width: 600px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid white; */
+  position: relative;
+}
+
+#notifications.hidden {
+  visibility: hidden;
+}
+
+#notifications #notif-img, #notifications #notif-text-wrapper {
+  position: absolute;
+  top: 0;
+}
+
+#notifications #notif-img {
+  height: 110px;
+  visibility: hidden;
+}
+
+#notifications.visible #notif-img {
+  animation: heartthrob 8s 1;
+}
+
+#notifications.hidden #notif-img {
+  visibility: hidden;
+  transition: 0.5s ease all;
+}
+
+#notifications #notif-text-wrapper {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  width: inherit;
+  height: inherit;
+}
+
+#notifications.visible #notif-text-wrapper {
+  animation: textfade 7s 1;
+  animation-delay: 1s;
+}
+
+#notifications #notif-text-wrapper p {
+  font-size: 40px;
+  color: white;
+  text-shadow: 0px 0px 1px #000000, 0px 0px 2px #000000, 0px 0px 3px #000000, 0px 0px 4px #000000, 0px 0px 5px #000000;
+}

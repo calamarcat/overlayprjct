@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>CalamarCat Overlays!</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/altviddiv.css">
+  <link rel="stylesheet" type="text/css" href="/css/subnotifs.css">
+  <link rel="stylesheet" type="text/css" href="/css/socials.css">
+  <script src="/js_includes/twitchsocket.js"></script>
+  <script src="/js_includes/socials.js"></script>
+  <script>
+    window.onload = () => {
+      const notifsElem = document.getElementById('notifications');
+      // window.show = () => notifsElem.className = "visible";
+      // window.hide = () => notifsElem.className = "hidden";
+      const subTextElem = document.getElementById('sub-text');
+      const subMsgElem = document.getElementById('sub-msg');
+      initTwitchSocket(notifsElem, subTextElem, subMsgElem);
+
+      const socialsElem = document.getElementById('socials');
+      initSocials(socialsElem);
+    };
+  </script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <aside>
+      <div id="notifications" class="hidden">
+        <img src="images/heart.png" id="notif-img" />
+        <div id="notif-text-wrapper">
+          <p id="sub-text">test data</p>
+          <p id="sub-msg">test data</p>
+        </div>
+        <!-- <iframe id="muxy-notifs" src="http://a.muxy.io/alert/calamarcat/KqmjboXYQsuXbsq6eyStCxCKiT2E1IcQ"></iframe> -->
+      </div>
+      <section id="boxes">
+        <div id="webcam" class="big"></div>
+        <div id="chat" class="big"></div>
+        <div id="events"></div>
+        <div id="socials"></div>
+      </section>
+    </aside>
+
+
+    <main>
+      <img id="logo" src="images/logo_plain.png" />
+
+      <!-- <section id="text">
+        <div>
+          <h1>Cat is taking a short break</h1>
+          <h2>(She's probably making tea or being distracted by Toby.)</h2>
+        </div>
+      </section> -->
+      <section id="vid">
+				<div>
+					<h1>Break time!</h1>
+					<h2>Cat is probably making tea<br>(or being distracted by Toby)</h2>
+				</div>
+			</section>
+    </main>
+  </div>
+</body>
+
+</html>

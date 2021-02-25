@@ -1,0 +1,118 @@
+body, header, main, aside, section, p, div, img {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  background-color: green;
+}
+
+h1 {
+  font-family: 'Pacifico';
+  color: white;
+  text-align: center;
+  font-size: 8.5em;
+  margin-top: 1.8em;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: 'Avenir Light';
+  color: white;
+  text-align: center;
+  font-size: 5.5em;
+}
+
+div#wrapper {
+  width: 1920px;
+  height: 1080px;
+  background: #180c1d url("../images/bg_dark.png") no-repeat left top;
+  background-size: contain;
+  padding: 40px 20px 60px 20px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+main, aside, aside section#boxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+aside div#notifications, main img#logo {
+  height: 100px;
+}
+
+section#vid, section#boxes {
+  height: 847px;
+  /* 720 x 1280 scaled + 10 for borders */
+}
+
+aside {
+  width: 372px;
+}
+
+aside #muxy-notifs {
+  width: 600px;
+  height: 120px;
+  border: 0;
+}
+
+aside section#boxes {
+  align-content: stretch;
+}
+
+aside section#boxes>div {
+  border: 5px solid white;
+  border-radius: 3px;
+  margin: 6px 0;
+}
+
+aside section#boxes>div {
+  background-color: green;
+}
+
+aside section#boxes div:first-child {
+  margin-top: 0;
+}
+
+aside section#boxes div:last-child {
+  margin-bottom: 0;
+}
+
+aside section#boxes div.big {
+  height: 32%;
+}
+
+aside section#boxes div#events {
+  height: 21%;
+}
+
+aside section#boxes div#socials {
+  height: 10%;
+}
+
+main {
+  align-items: center;
+}
+
+main img#logo {
+  max-width: 50%;
+}
+
+section#vid div {
+  height: 837px;
+  background-color: green;
+  width: 1488px;
+  border: 5px solid white;
+  border-radius: 3px;
+}
+
+aside section#boxes>div#socials {
+  background-color: rgba(26, 14, 31, 0.8);
+}
