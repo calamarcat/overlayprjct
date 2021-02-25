@@ -44,7 +44,7 @@ main, aside, aside section#boxes {
   justify-content: space-between;
 }
 
-aside div#notifications, main img#logo {
+aside div#socials-wrapper div#socials, main img#logo {
   height: 100px;
 }
 
@@ -57,13 +57,8 @@ aside {
   width: 372px;
 }
 
-aside #muxy-notifs {
-  width: 600px;
-  height: 120px;
-  border: 0;
-}
-
-aside section#boxes {
+aside section#boxes,
+aside div#socials-wrapper div#socials {
   align-content: stretch;
 }
 
@@ -85,16 +80,8 @@ aside section#boxes div:last-child {
   margin-bottom: 0;
 }
 
-aside section#boxes div.big {
+aside section#boxes div {
   height: 32%;
-}
-
-aside section#boxes div#events {
-  height: 21%;
-}
-
-aside section#boxes div#socials {
-  height: 10%;
 }
 
 main {
@@ -113,6 +100,6 @@ section#vid div {
   border-radius: 3px;
 }
 
-aside section#boxes>div#socials {
+/* aside section#boxes>div#socials {
   background-color: rgba(26, 14, 31, 0.8);
-}
+} */
