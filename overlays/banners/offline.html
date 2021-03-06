@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>CalamarCat Overlays!</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/banners/css/offline.css">
+	<script src="js/html2canvas.js"></script>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="spacer"><p>&nbsp;</p></div>
+		<h1>Cat is currently offline</h1>
+    <p>Catch her 7-10 PM AEST (UTC+10)<br>Monday & Wednesday</p>
+		<!-- <div id="spacer"><p>&nbsp;</p></div> -->
+		<div id="icons">
+			<img src="../images/icon_twitch.png">
+			<img src="../images/icon_twitter.png">
+			<img src="../images/icon_youtube.png">
+		</div>
+	</div>
+
+	<script>
+		window.onload = () => {
+
+			// download function
+			function download(canvas, filename) {
+
+				/// create an "off-screen" anchor tag
+				var lnk = document.createElement('a');
+
+				/// the key here is to set the download attribute of the a tag
+				lnk.download = filename;
+
+				/// convert canvas content to data-uri for link. When download
+				/// attribute is set the content pointed to by link will be
+				/// pushed as "download" in HTML5 capable browsers
+				lnk.href = canvas.toDataURL();
+
+				let e;
+
+				/// create a "fake" click-event to trigger the download
+				if (document.createEvent) {
+
+					e = document.createEvent("MouseEvents");
+					e.initMouseEvent("click", true, true, window,
+						0, 0, 0, 0, 0, false, false, false,
+						false, 0, null);
+
+					lnk.dispatchEvent(e);
+
+				} else if (lnk.fireEvent) {
+
+					lnk.fireEvent("onclick");
+				}
+			}
+
+			// download canvas
+			window.scrollTo(0, 0);
+			html2canvas(document.querySelector("#wrapper")).then(canvas => {
+				document.body.appendChild(canvas);
+				download(canvas, 'offlinebanner.png');
+			});
+
+		}
+
+	</script>
+</body>
+
+</html>

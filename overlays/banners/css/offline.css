@@ -1,0 +1,53 @@
+body, header, main, aside, section, p, div, img {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+div#wrapper {
+  width: 2048px;
+  height: 1152px;
+  background: #180c1d url("../../images/bg_dark.png") no-repeat left top;
+  background-size: contain;
+  padding: 40px 20px 60px 20px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Pacifico';
+  color: white;
+  text-align: center;
+  font-size: 11em;
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+p {
+  font-family: 'Avenir Light';
+  color: white;
+  text-align: center;
+  font-size: 6.8em;
+  margin: 0;
+  margin-bottom: 100px;
+}
+
+div#spacer {
+  height: 50px;
+}
+
+div#icons {
+  /* margin-top: 20px; */
+  margin-bottom: 20px;
+}
+
+div#icons img {
+  height: 80px;
+  margin: 0 100px;
+}
