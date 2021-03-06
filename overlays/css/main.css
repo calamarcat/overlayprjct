@@ -29,7 +29,7 @@ div#wrapper {
   height: 1080px;
   background: #180c1d url("../images/bg_dark.png") no-repeat left top;
   background-size: contain;
-  padding: 40px 20px 60px 20px;
+  padding: 55px 20px;
   box-sizing: border-box;
   position: absolute;
   left: 0;
@@ -38,58 +38,57 @@ div#wrapper {
   justify-content: space-between;
 }
 
-main, aside, aside section#boxes {
+div#wrapper, main, aside, footer, footer div#labels-wrapper {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
 }
 
-aside div#socials-wrapper div#socials, main img#logo {
-  height: 100px;
+main, footer, footer div#labels-wrapper {
+  flex-direction: row;
 }
 
-section#vid, section#boxes {
+div#wrapper, aside {
+  flex-direction: column;
+}
+
+section#vid, aside {
   height: 847px;
   /* 720 x 1280 scaled + 10 for borders */
 }
 
-aside {
+aside, footer div#socials-wrapper {
   width: 372px;
 }
 
-aside section#boxes,
-aside div#socials-wrapper div#socials {
+aside {
   align-content: stretch;
 }
 
-aside section#boxes>div {
+aside>div {
   border: 5px solid white;
   border-radius: 3px;
   margin: 6px 0;
+  background-color: rgba(26, 14, 31, 0.8);
 }
 
-aside section#boxes>div {
-  background-color: green;
-}
-
-aside section#boxes div:first-child {
+aside div:first-child {
   margin-top: 0;
 }
 
-aside section#boxes div:last-child {
+aside div:last-child {
   margin-bottom: 0;
 }
 
-aside section#boxes div {
+aside div#webcam {
   height: 32%;
+}
+
+aside div#chat {
+  height: 65%;
 }
 
 main {
   align-items: center;
-}
-
-main img#logo {
-  max-width: 50%;
 }
 
 section#vid div {
@@ -100,6 +99,33 @@ section#vid div {
   border-radius: 3px;
 }
 
-/* aside section#boxes>div#socials {
+footer div#socials-wrapper {
+  border: 5px solid white;
+  border-radius: 3px;
   background-color: rgba(26, 14, 31, 0.8);
-} */
+  height: 110px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+footer div#labels-wrapper {
+  width: 1498px;
+}
+
+footer div#labels-wrapper div {
+  width: 32%;
+  height: 100px;
+  border: 5px solid white;
+  border-radius: 3px;
+  background-color: rgba(26, 14, 31, 0.8);
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  /* font-family: 'Avenir Light'; */
+  font-family: 'Pacifico';
+  font-size: 1.5em;
+}

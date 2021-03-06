@@ -1,0 +1,73 @@
+body, header, main, aside, section, p, div, img {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  background-color: green;
+}
+
+h1 {
+  font-family: 'Pacifico';
+  color: white;
+  text-align: center;
+  font-size: 8.5em;
+  margin-top: 1.8em;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: 'Avenir Light';
+  color: white;
+  text-align: center;
+  font-size: 5.5em;
+}
+
+div#wrapper {
+  width: 1920px;
+  height: 1080px;
+  background: #180c1d url("../images/bg_dark.png") no-repeat left top;
+  background-size: contain;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+main section#vid {
+  /* These numbers are 90% of 1920 x 1080 */
+  height: 972px;
+  width: 1728px;
+  background-color: green;
+  border: 5px solid white;
+  border-radius: 3px;
+}
+
+header, footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header div#logo, footer div#icons {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header div#logo img {
+  height: 80%;
+}
+
+footer div#icons img {
+  height: 70%;
+  margin: 0 20px;
+}

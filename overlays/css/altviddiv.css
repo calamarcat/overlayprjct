@@ -5,4 +5,5 @@ section#vid div {
   border: none;
   position: relative;
   top: -100px;
+  padding-top: 50px;
 }
