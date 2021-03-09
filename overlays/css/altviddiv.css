@@ -1,9 +1,24 @@
+h1 {
+  font-size: 6em;
+}
+
+h2 {
+  font-size: 4em;
+}
+
 section#vid div {
   height: 837px;
   background-color: initial;
   width: 1488px;
   border: none;
   position: relative;
-  top: -100px;
+  top: 200px;
   padding-top: 50px;
+}
+
+section#vid div img {
+  position: absolute;
+  top: -180px;
+  left: 170px;
+  height: 600px;
 }
