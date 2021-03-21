@@ -69,7 +69,7 @@ aside>div {
   border: 5px solid white;
   border-radius: 3px;
   margin: 6px 0;
-  background-color: rgba(26, 14, 31, 0.9);
+  background-color: green
 }
 
 aside div:first-child {
