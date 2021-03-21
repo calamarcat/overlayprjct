@@ -4,21 +4,27 @@
 <head>
 	<title>CalamarCat Overlays!</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+  </style>
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 	<link rel="stylesheet" type="text/css" href="/css/altviddiv.css">
 	<link rel="stylesheet" type="text/css" href="/css/subnotifs.css">
 	<link rel="stylesheet" type="text/css" href="/css/socials.css">
-	<script src="/js_includes/twitchsocket.js"></script>
+
+  <style>
+		section#vid div {
+      left: -30px;
+    }
+
+    section#vid div img {
+      left: 80px;
+    }
+  </style>
+
 	<script src="/js_includes/socials.js"></script>
 	<script>
 		window.onload = () => {
-			const notifsElem = document.getElementById('notifications');
-			// window.show = () => notifsElem.className = "visible";
-			// window.hide = () => notifsElem.className = "hidden";
-			const subTextElem = document.getElementById('sub-text');
-			const subMsgElem = document.getElementById('sub-msg');
-			initTwitchSocket(notifsElem, subTextElem, subMsgElem);
-
 			const socialsElem = document.getElementById('socials');
 			initSocials(socialsElem);
 		};

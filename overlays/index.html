@@ -5,6 +5,37 @@
   <title>CalamarCat Overlays!</title>
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
+  <style>
+    div.iframe-wrap {
+      width: 640px;
+      height: 360px;
+      padding: 0;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    .scaled-iframe {
+      width: 1920px;
+      height: 1080px;
+      border: 0px;
+    }
+
+    .scaled-iframe {
+      zoom: 0.3;
+      -moz-transform: scale(0.3);
+      -moz-transform-origin: 0 0;
+      -o-transform: scale(0.3);
+      -o-transform-origin: 0 0;
+      -webkit-transform: scale(0.3);
+      -webkit-transform-origin: 0 0;
+    }
+
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+      .scaled-iframe {
+        zoom: 1;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -15,6 +46,23 @@
     <li><a href="./end.html">end</a></li>
     <li><a href="./minimal.html">minimal</a></li>
   </ul>
+
+  <h2>All:</h2>
+  <div class="iframe-wrap">
+    <iframe class="scaled-iframe" src="./main.html"></iframe>
+  </div>
+  <div class="iframe-wrap">
+    <iframe class="scaled-iframe" src="./minimal.html"></iframe>
+  </div>
+  <div class="iframe-wrap">
+    <iframe class="scaled-iframe" src="./soon.html"></iframe>
+  </div>
+  <div class="iframe-wrap">
+    <iframe class="scaled-iframe" src="./afk.html"></iframe>
+  </div>
+  <div class="iframe-wrap">
+    <iframe class="scaled-iframe" src="./end.html"></iframe>
+  </div>
 </body>
 
 </html>

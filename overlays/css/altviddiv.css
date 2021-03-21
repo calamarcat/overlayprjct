@@ -1,9 +1,15 @@
 h1 {
-  font-size: 6em;
+  font-size: 9em;
+  margin-top: 160px;
 }
 
 h2 {
   font-size: 4em;
+  margin-top: 0px;
+}
+
+div#wrapper {
+  background: #180c1d url("../images/bg new for resizing fade 02.jpg") no-repeat left top;
 }
 
 section#vid div {
@@ -12,13 +18,14 @@ section#vid div {
   width: 1488px;
   border: none;
   position: relative;
-  top: 200px;
+  top: 210px;
+  left: 10px;
   padding-top: 50px;
 }
 
 section#vid div img {
   position: absolute;
-  top: -180px;
-  left: 170px;
-  height: 600px;
+  top: -220px;
+  left: -20px;
+  height: 700px;
 }

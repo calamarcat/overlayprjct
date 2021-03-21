@@ -27,7 +27,7 @@ h2 {
 div#wrapper {
   width: 1920px;
   height: 1080px;
-  background: #180c1d url("../images/bg_dark.png") no-repeat left top;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/bg new 2.jpg");
   background-size: contain;
   padding: 10px 20px;
   box-sizing: border-box;

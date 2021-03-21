@@ -10,24 +10,25 @@ body {
 
 h1 {
   font-family: 'Pacifico';
-  color: white;
+  color: rgba(26, 14, 31, 0.9);
   text-align: center;
   font-size: 8.5em;
-  margin-top: 1.8em;
+  margin-top: 150px;
   margin-bottom: 0;
 }
 
 h2 {
   font-family: 'Avenir Light';
-  color: white;
+  color: rgba(26, 14, 31, 1);
   text-align: center;
   font-size: 5.5em;
+  margin-top: 10px;
 }
 
 div#wrapper {
   width: 1920px;
   height: 1080px;
-  background: #180c1d url("../images/bg_dark.png") no-repeat left top;
+  background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("../images/bg new 2.jpg");
   background-size: contain;
   padding: 55px 20px;
   box-sizing: border-box;
@@ -68,7 +69,7 @@ aside>div {
   border: 5px solid white;
   border-radius: 3px;
   margin: 6px 0;
-  background-color: rgba(26, 14, 31, 0.8);
+  background-color: rgba(26, 14, 31, 0.9);
 }
 
 aside div:first-child {
@@ -102,7 +103,7 @@ section#vid div {
 footer div#socials-wrapper {
   border: 5px solid white;
   border-radius: 3px;
-  background-color: rgba(26, 14, 31, 0.8);
+  background-color: rgba(26, 14, 31, 0.9);
   height: 110px;
   box-sizing: border-box;
   display: flex;
@@ -118,7 +119,7 @@ footer div#labels-wrapper div {
   height: 100px;
   border: 5px solid white;
   border-radius: 3px;
-  background-color: rgba(26, 14, 31, 0.8);
+  background-color: rgba(26, 14, 31, 0.9);
   display: flex;
   justify-content: space-between;
   color: white;
