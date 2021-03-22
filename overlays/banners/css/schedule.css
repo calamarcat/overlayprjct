@@ -22,18 +22,20 @@ div#wrapper {
 
 h1 {
   font-family: 'Pacifico';
-  color: white;
+  color: rgba(26, 14, 31, 1);
   text-align: center;
   font-size: 12em;
   margin: 0;
   margin-bottom: 20px;
+  /* -webkit-text-stroke: 3px white; */
 }
 
 p {
   font-family: 'Avenir Light';
-  color: white;
+  color: rgba(26, 14, 31, 1);
   text-align: center;
   font-size: 8em;
   margin: 0;
   margin-bottom: 70px;
+  -webkit-text-stroke: 2px white;
 }

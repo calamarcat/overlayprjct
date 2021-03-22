@@ -22,9 +22,11 @@ div#wrapper {
 
 div#wrapper img#logo {
   margin: 30px;
+  /* filter: invert(0.8); */
 }
 
 div#icons img {
   height: 80px;
   margin: 15px 60px;
+  /* filter: invert(0.8); */
 }

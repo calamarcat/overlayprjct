@@ -8,6 +8,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
   </style>
 	<link rel="stylesheet" type="text/css" href="/css/minimal.css">
+	<script src="banners/js/html2canvas.js"></script>
 </head>
 
 <body>
@@ -22,6 +23,52 @@
 		</main>
 
 	</div>
+
+	<script>
+		window.onload = () => {
+
+			// download function
+			function download(canvas, filename) {
+
+				/// create an "off-screen" anchor tag
+				var lnk = document.createElement('a');
+
+				/// the key here is to set the download attribute of the a tag
+				lnk.download = filename;
+
+				/// convert canvas content to data-uri for link. When download
+				/// attribute is set the content pointed to by link will be
+				/// pushed as "download" in HTML5 capable browsers
+				lnk.href = canvas.toDataURL();
+
+				let e;
+
+				/// create a "fake" click-event to trigger the download
+				if (document.createEvent) {
+
+					e = document.createEvent("MouseEvents");
+					e.initMouseEvent("click", true, true, window,
+						0, 0, 0, 0, 0, false, false, false,
+						false, 0, null);
+
+					lnk.dispatchEvent(e);
+
+				} else if (lnk.fireEvent) {
+
+					lnk.fireEvent("onclick");
+				}
+			}
+
+			// download canvas
+			window.scrollTo(0, 0);
+			html2canvas(document.querySelector("#wrapper")).then(canvas => {
+				document.body.appendChild(canvas);
+				download(canvas, 'bg_generated.png');
+			});
+
+		}
+
+	</script>
 </body>
 
 </html>
