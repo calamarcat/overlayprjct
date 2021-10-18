@@ -52,9 +52,13 @@ div#wrapper, aside {
   flex-direction: column;
 }
 
-section#vid, aside {
+section#vid {
   height: 847px;
   /* 720 x 1280 scaled + 10 for borders */
+}
+
+aside {
+  height: 970px;
 }
 
 aside, footer div#socials-wrapper {
@@ -88,11 +92,17 @@ aside div#chat {
   height: 65%;
 }
 
-main {
+/* main {
   align-items: center;
+} */
+
+section#vid {
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
 }
 
-section#vid div {
+section#vid div#screen {
   height: 837px;
   background-color: green;
   width: 1488px;
@@ -100,7 +110,13 @@ section#vid div {
   border-radius: 3px;
 }
 
-footer div#socials-wrapper {
+section#vid footer {
+  /* width: 1488px; */
+  height: 110px;
+  margin-top: 13px;
+}
+
+section#vid footer div#socials-wrapper {
   border: 5px solid white;
   border-radius: 3px;
   background-color: rgba(26, 14, 31, 0.9);
@@ -108,14 +124,15 @@ footer div#socials-wrapper {
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+  width: 50%;
 }
 
-footer div#labels-wrapper {
-  width: 1498px;
+section#vid footer div#labels-wrapper {
+  width: 50%;
 }
 
-footer div#labels-wrapper div {
-  width: 32%;
+section#vid footer div#labels-wrapper div {
+  width: 100%;
   height: 100px;
   border: 5px solid white;
   border-radius: 3px;

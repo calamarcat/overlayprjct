@@ -4,6 +4,7 @@ const port = 3000
 var path = require('path');
 
 app.use(express.static('overlays'));
+
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
