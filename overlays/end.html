@@ -2,18 +2,18 @@
 <html>
 
 <head>
-	<title>CalamarCat Overlays!</title>
-	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-	<style>
+  <title>CalamarCat Overlays!</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
   </style>
-	<link rel="stylesheet" type="text/css" href="/css/main.css">
-	<link rel="stylesheet" type="text/css" href="/css/altviddiv.css">
-	<link rel="stylesheet" type="text/css" href="/css/subnotifs.css">
-	<link rel="stylesheet" type="text/css" href="/css/socials.css">
-
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/subnotifs.css">
+  <link rel="stylesheet" type="text/css" href="/css/socials.css">
+  <link rel="stylesheet" type="text/css" href="/css/altviddiv.css">
+  
   <style>
-		section#vid div {
+    section#vid div {
       left: -30px;
     }
 
@@ -22,58 +22,45 @@
     }
   </style>
 
-	<script src="/js_includes/socials.js"></script>
-	<script>
-		window.onload = () => {
-			const socialsElem = document.getElementById('socials');
-			initSocials(socialsElem);
-		};
-	</script>
-	<script src="banners/js/html2canvas.js"></script>
+  <script src="/js_includes/socials.js"></script>
+  <script>
+    window.onload = () => {
+      const socialsElem = document.getElementById('socials');
+      initSocials(socialsElem, true, false);
+    };
+  </script>
+  <script src="banners/js/html2canvas.js"></script>
 </head>
 
 <body>
-	<div id="wrapper">
-		<main>
-			<aside>
-				<div id="webcam">
-					<p>&nbsp;</p>
-				</div>
-				<div id="chat"></div>
-				<!-- <div id="events"></div> -->
-			</aside>
+  <div id="wrapper">
+    <main>
+      <aside>
+        <!-- <div id="webcam">
+          <p>&nbsp;</p>
+        </div>
+        <div id="chat"></div> -->
+        <!-- <div id="events"></div> -->
+      </aside>
 
-			<!-- <img id="logo" src="images/logo_plain.png" /> -->
-			<section id="vid">
-				<div>
-					<img src="images/cat comm trans.png">
-					<h1>Thank you!</h1>
-					<h2>Catch Cat again 7-10 PM AEST<br>Monday and Wednesday</h2>
-				</div>
-			</section>
-		</main>
+      <!-- <img id="logo" src="images/logo_plain.png" /> -->
+      <section id="vid">
+        <div id="img">
+          <img src="images/cat comm trans.png">
+          <h1>Thank you!</h1>
+					<h2>Streams, vods and other vids<br>can be found on Youtube!</h2>
+        </div>
+        <footer>
+          <div id="socials-wrapper">
+            <div id="socials"></div>
+          </div>
+        </footer>
+      </section>
+    </main>
 
-		<footer>
-			<div id="socials-wrapper">
-				<!-- <div id="socials"></div> -->
-			</div>
-			<!-- <div id="labels-wrapper">
-				<div id="sub">
-					<p>Latest sub:</p>
-					<p>&nbsp;</p>
-				</div>
-				<div id="follow">
-					<p>Latest follow:</p>
-					<p>&nbsp;</p>
-				</div>
-				<div id="cheer">
-					<p>Latest cheer:</p>
-					<p>&nbsp;</p>
-				</div>
-			</div> -->
-		</footer>
-	</div>
-	<!-- <script>
+    
+  </div>
+  <!-- <script>
 		window.onload = () => {
 
 			// download function
@@ -112,7 +99,7 @@
 			window.scrollTo(0, 0);
 			html2canvas(document.querySelector("#wrapper")).then(canvas => {
 				document.body.appendChild(canvas);
-				download(canvas, 'end_generated.png');
+				download(canvas, 'afk_generated.png');
 			});
 
 		}

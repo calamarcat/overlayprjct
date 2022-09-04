@@ -8,10 +8,10 @@
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
   </style>
   <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/altviddiv.css">
   <link rel="stylesheet" type="text/css" href="/css/subnotifs.css">
   <link rel="stylesheet" type="text/css" href="/css/socials.css">
-
+  <link rel="stylesheet" type="text/css" href="/css/altviddiv.css">
+  
   <style>
     section#vid div {
       left: -10px;
@@ -26,7 +26,7 @@
   <script>
     window.onload = () => {
       const socialsElem = document.getElementById('socials');
-      initSocials(socialsElem);
+      initSocials(socialsElem, true, false);
     };
   </script>
   <script src="banners/js/html2canvas.js"></script>
@@ -36,42 +36,29 @@
   <div id="wrapper">
     <main>
       <aside>
-        <div id="webcam">
+        <!-- <div id="webcam">
           <p>&nbsp;</p>
         </div>
-        <div id="chat"></div>
+        <div id="chat"></div> -->
         <!-- <div id="events"></div> -->
       </aside>
 
       <!-- <img id="logo" src="images/logo_plain.png" /> -->
       <section id="vid">
-        <div>
+        <div id="img">
           <img src="images/cat comm trans.png">
           <h1>Break time!</h1>
           <h2>Cat is probably making tea<br>(or being distracted by Toby)</h2>
         </div>
+        <footer>
+          <div id="socials-wrapper">
+            <div id="socials"></div>
+          </div>
+        </footer>
       </section>
     </main>
 
-    <footer>
-      <div id="socials-wrapper">
-        <!-- <div id="socials"></div> -->
-      </div>
-      <!-- <div id="labels-wrapper">
-				<div id="sub">
-					<p>Latest sub:</p>
-					<p>&nbsp;</p>
-				</div>
-				<div id="follow">
-					<p>Latest follow:</p>
-					<p>&nbsp;</p>
-				</div>
-				<div id="cheer">
-					<p>Latest cheer:</p>
-					<p>&nbsp;</p>
-				</div>
-			</div> -->
-    </footer>
+    
   </div>
   <!-- <script>
 		window.onload = () => {

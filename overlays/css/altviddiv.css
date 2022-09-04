@@ -9,10 +9,18 @@ h2 {
 }
 
 div#wrapper {
+  width: 1920px;
+  height: 1080px;
   background: #180c1d url("../images/bg new for resizing fade 02.jpg") no-repeat left top;
+  padding: 0px;
+  margin: 0px;
 }
 
-section#vid div {
+section#vid {
+  margin-top: 25px;
+}
+
+section#vid div#img {
   height: 837px;
   background-color: initial;
   width: 1488px;
@@ -23,7 +31,7 @@ section#vid div {
   padding-top: 50px;
 }
 
-section#vid div img {
+section#vid div#img img {
   position: absolute;
   top: -220px;
   left: -20px;
@@ -32,4 +40,36 @@ section#vid div img {
 
 aside div#chat {
   background-color: #1a0e1f;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section#vid footer {
+  margin-top: 0;
+  position: relative;
+  top: -20px;
+}
+
+section#vid footer div#socials-wrapper {
+  border: none;
+  background-color: unset;
+  height: 100px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  /* width: 30%; */
+}
+
+section#vid footer #socials #socials-info-wrapper {
+  margin-left: 20px;
+}
+
+#socials #socials-info-wrapper #socials-text,
+#socials #socials-info-wrapper #socials-command {
+  color: rgba(26, 14, 31, 1);
+  font-weight: bold;
 }

@@ -48,15 +48,17 @@ const items = [
   // }
 ];
 
-const generateImage = (imgPath, className, fullsize) => {
-  
-  const isSvg = imgPath.endsWith('.svg');
+const generateImage = (imgPath, className, fullsize, light) => {
+  const img = light ? imgPath : `dark_${imgPath}`;
+  const isSvg = img.endsWith('.svg');
   const image = document.createElement('img');
+  
   image.className = isSvg ? `${className} socials-svg` : className;
-  image.src = `../images/${imgPath}`;
+  image.src = `../images/${img}`;
+  
   if (isSvg) {
     const size = fullsize ? '53' : '23';
-    image.style = `height: ${size}px; width: ${size}px; padding: 5px 8px 5px 10px; filter: invert(100%);`;
+    image.style = `height: ${size}px; width: ${size}px; padding: 5px 8px 5px 10px;`;
   } else {
     const size = fullsize ? '63' : '26';
     image.style = `height: ${size}px; padding: 0 8px 0 10px;`;
@@ -64,15 +66,14 @@ const generateImage = (imgPath, className, fullsize) => {
   return image;
 };
 
-const generateMainScreen = (fullsize) => {
+const generateMainScreen = (fullsize, light) => {
   const wrapper = document.createElement('div');
   wrapper.id = "socials-main-wrapper";
 
   const images = ['icon_twitter.png', 'icon_youtube.png', 'icon_discord.png'];
 
   for (i in images) {
-    const img = images[i];
-    wrapper.appendChild(generateImage(img, "socials-main-img", fullsize));
+    wrapper.appendChild(generateImage(images[i], "socials-main-img", fullsize, light));
   }
   return wrapper;
 };
@@ -108,12 +109,12 @@ const oneLineText = (div, item) => {
   // mutation side-effect
 };
 
-const generateScreen = (item, fullsize) => {
+const generateScreen = (item, fullsize, light) => {
   const wrapper = document.createElement('div');
   wrapper.id = "socials-info-wrapper";
 
   if (item.img) {
-    wrapper.appendChild(generateImage(item.img, "socials-img", fullsize));
+    wrapper.appendChild(generateImage(item.img, "socials-img", fullsize, light));
   }
 
   const div = document.createElement('div');
@@ -125,10 +126,10 @@ const generateScreen = (item, fullsize) => {
   return wrapper;
 };
 
-const initSocials = (socialsWrapper, fullsize=true) => {
+const initSocials = (socialsWrapper, fullsize=true, light=true) => {
   let index = 0;
 
-  const mainScreen = generateMainScreen(fullsize);
+  const mainScreen = generateMainScreen(fullsize, light);
 
   const ANIMATION_END = 'animationend';
 
@@ -160,9 +161,8 @@ const initSocials = (socialsWrapper, fullsize=true) => {
 
 
   setInterval(() => {
-    console.log(index);
     const item = items[index];
-    replaceMain(socialsWrapper.children[0], generateScreen(item, fullsize));
+    replaceMain(socialsWrapper.children[0], generateScreen(item, fullsize, light));
 
     setTimeout(() => {
       replaceInfo(socialsWrapper.children[0], mainScreen);
