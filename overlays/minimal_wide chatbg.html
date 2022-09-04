@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>CalamarCat Overlays!</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+  </style>
+	<style>
+		body, header, main, aside, section, p, div, img {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  /* background-color: green; */
+}
+
+h1 {
+  font-family: 'Pacifico';
+  color: white;
+  text-align: center;
+  font-size: 8.5em;
+  margin-top: 1.8em;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: 'Avenir Light';
+  color: white;
+  text-align: center;
+  font-size: 5.5em;
+}
+
+div#wrapper {
+  width: 1920px;
+  height: 1080px;
+  /* background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/bg new 2.jpg"); */
+  background-size: contain;
+  padding: 10px 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+main section#vid {
+  /* These numbers are 90% of 1920 x 1080 */
+  height: 972px;
+  width: 100%;
+  /* background-color: green; */
+  /* border-top: 5px solid #ffffff;
+  border-bottom: 5px solid #ffffff; */
+  border-radius: 3px;
+}
+
+main section#chatbg div {
+  width: 370px;
+  height: 950px;
+  position: absolute;
+  top: 65px;
+  left: 20px;
+  background-color: rgba(46, 25, 53, 0.85);
+  border-radius: 3px;
+}
+
+header, footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header div#logo, footer div#icons {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header div#logo img {
+  height: 80%;
+}
+	</style>
+	<script>
+		window.onload = () => {
+			const socialsElem = document.getElementById('socials');
+			initSocials(socialsElem, false);
+		};
+	</script>
+	<script src="banners/js/html2canvas.js"></script>
+</head>
+
+<body>
+	<div id="wrapper">
+    <header>
+      <div id="logo">
+        <!-- <img src="../images/logo_plain.png"> -->
+      </div>
+    </header>
+
+		<main>
+			<section id="vid">
+				<div><p>&nbsp;</p></div>
+			</section>
+			<section id="chatbg">
+				<div></div>
+			</section>
+		</main>
+
+		<footer>
+			<!-- <div id="icons">
+				<img src="../images/icon_twitter.png">
+				<img src="../images/icon_youtube.png">
+				<img src="../images/discord.png">
+			</div> -->
+			<!-- <div id="socials-wrapper">
+				<div id="socials"></div>
+			</div> -->
+		</footer>
+	</div>
+	<script>
+		window.onload = () => {
+
+			// download function
+			function download(canvas, filename) {
+
+				/// create an "off-screen" anchor tag
+				var lnk = document.createElement('a');
+
+				/// the key here is to set the download attribute of the a tag
+				lnk.download = filename;
+
+				/// convert canvas content to data-uri for link. When download
+				/// attribute is set the content pointed to by link will be
+				/// pushed as "download" in HTML5 capable browsers
+				lnk.href = canvas.toDataURL();
+
+				let e;
+
+				/// create a "fake" click-event to trigger the download
+				if (document.createEvent) {
+
+					e = document.createEvent("MouseEvents");
+					e.initMouseEvent("click", true, true, window,
+						0, 0, 0, 0, 0, false, false, false,
+						false, 0, null);
+
+					lnk.dispatchEvent(e);
+
+				} else if (lnk.fireEvent) {
+
+					lnk.fireEvent("onclick");
+				}
+			}
+
+			// download canvas
+			window.scrollTo(0, 0);
+			html2canvas(document.querySelector("#wrapper"), {backgroundColor:null}).then(canvas => {
+				document.body.appendChild(canvas);
+				download(canvas, 'minimal_wide_chatbg_generated.png');
+			});
+
+		}
+
+	</script>
+</body>
+
+</html>

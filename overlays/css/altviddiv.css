@@ -29,3 +29,7 @@ section#vid div img {
   left: -20px;
   height: 700px;
 }
+
+aside div#chat {
+  background-color: #1a0e1f;
+}

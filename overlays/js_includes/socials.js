@@ -1,4 +1,4 @@
-const MULTIPLIER = 500; // for debugging, 1000 for prod
+const MULTIPLIER = 100; // for debugging, 1000 for prod
 const TIMER = 4 * MULTIPLIER * 60; // 1000 = 4 seconds
 const INTERVAL = 5 * MULTIPLIER * 60; // 1000 = 5 minutes
 const items = [
@@ -17,8 +17,8 @@ const items = [
     img: 'oceanink_logo.png',
   },
   {
-    html: `Icons by Sare!`,
-    command: `!artcredit`,
+    html: `Art credit:`,
+    command: `!art`,
     img: 'brush.svg',
   },
   {
@@ -40,7 +40,7 @@ const items = [
     html: `Hoodies and things:`,
     command: `!merch`,
     img: 'baseline-free_breakfast-24px.png'
-  },
+  }
   // {
   //   html: `Share the love?`,
   //   command: `!tweet`,
@@ -48,42 +48,36 @@ const items = [
   // }
 ];
 
-const generateImage = (imgPath, className) => {
+const generateImage = (imgPath, className, fullsize) => {
+  
   const isSvg = imgPath.endsWith('.svg');
   const image = document.createElement('img');
   image.className = isSvg ? `${className} socials-svg` : className;
   image.src = `../images/${imgPath}`;
   if (isSvg) {
-    image.style = "height: 53px; width: 53px; padding: 5px 8px 5px 10px; filter: invert(100%);";
+    const size = fullsize ? '53' : '23';
+    image.style = `height: ${size}px; width: ${size}px; padding: 5px 8px 5px 10px; filter: invert(100%);`;
   } else {
-    image.style = "height: 63px; padding: 0 8px 0 10px;";
+    const size = fullsize ? '63' : '26';
+    image.style = `height: ${size}px; padding: 0 8px 0 10px;`;
   }
   return image;
 };
 
-const generateMainScreen = () => {
+const generateMainScreen = (fullsize) => {
   const wrapper = document.createElement('div');
   wrapper.id = "socials-main-wrapper";
 
-  const images = ['icon_twitter.png', 'icon_discord.png', 'star-fill.svg', 'heart-fill.svg'];
+  const images = ['icon_twitter.png', 'icon_youtube.png', 'icon_discord.png'];
 
   for (i in images) {
     const img = images[i];
-    wrapper.appendChild(generateImage(img, "socials-main-img"));
+    wrapper.appendChild(generateImage(img, "socials-main-img", fullsize));
   }
   return wrapper;
 };
 
-const generateScreen = (item) => {
-  const wrapper = document.createElement('div');
-  wrapper.id = "socials-info-wrapper";
-
-  if (item.img) {
-    wrapper.appendChild(generateImage(item.img, "socials-img"));
-  }
-
-  const div = document.createElement('div');
-
+const twoLineText = (div, item) => {
   const text = document.createElement('p');
   text.id = "socials-text";
   text.innerHTML = item.html;
@@ -95,16 +89,46 @@ const generateScreen = (item) => {
     cmd.innerHTML = item.command;
     div.appendChild(cmd);
   }
+  // mutation side-effect
+};
+
+const oneLineText = (div, item) => {
+  const text = document.createElement('p');
+  text.id = "socials-text";
+  text.innerHTML = item.html;
+  
+  if (item.command) {
+    const cmd = document.createElement('span');
+    cmd.id = "socials-command";
+    cmd.innerHTML = `&nbsp;${item.command}`;
+    text.appendChild(cmd);
+  }
+
+  div.appendChild(text);
+  // mutation side-effect
+};
+
+const generateScreen = (item, fullsize) => {
+  const wrapper = document.createElement('div');
+  wrapper.id = "socials-info-wrapper";
+
+  if (item.img) {
+    wrapper.appendChild(generateImage(item.img, "socials-img", fullsize));
+  }
+
+  const div = document.createElement('div');
+
+  fullsize ? twoLineText(div, item) : oneLineText(div, item);
 
   wrapper.appendChild(div);
 
   return wrapper;
 };
 
-const initSocials = (socialsWrapper) => {
+const initSocials = (socialsWrapper, fullsize=true) => {
   let index = 0;
 
-  const mainScreen = generateMainScreen();
+  const mainScreen = generateMainScreen(fullsize);
 
   const ANIMATION_END = 'animationend';
 
@@ -138,7 +162,7 @@ const initSocials = (socialsWrapper) => {
   setInterval(() => {
     console.log(index);
     const item = items[index];
-    replaceMain(socialsWrapper.children[0], generateScreen(item));
+    replaceMain(socialsWrapper.children[0], generateScreen(item, fullsize));
 
     setTimeout(() => {
       replaceInfo(socialsWrapper.children[0], mainScreen);
