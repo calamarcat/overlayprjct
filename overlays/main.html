@@ -8,7 +8,6 @@
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
   </style>
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
-	<link rel="stylesheet" type="text/css" href="/css/subnotifs.css">
 	<link rel="stylesheet" type="text/css" href="/css/socials.css">
 	<script src="/js_includes/socials.js"></script>
 	<script>
@@ -17,6 +16,7 @@
 			initSocials(socialsElem);
 		};
 	</script>
+	<script src="banners/js/html2canvas.js"></script>
 </head>
 
 <body>
@@ -30,30 +30,71 @@
 			</aside>
 
 			<section id="vid">
-				<div></div>
+				<div id="screen"></div>
+				<footer>
+					<div id="socials-wrapper">
+						<div id="socials"></div>
+					</div>
+					<div id="labels-wrapper">
+						<div id="sub">
+							<p>Latest sub:</p>
+							<p>&nbsp;</p>
+						</div>
+					</div>
+				</footer>
 			</section>
 		</main>
 
 		<footer>
-			<div id="socials-wrapper">
-				<div id="socials"></div>
-			</div>
-			<div id="labels-wrapper">
-				<div id="sub">
-					<p>Latest sub:</p>
-					<p>&nbsp;</p>
-				</div>
-				<div id="follow">
-					<p>Latest follow:</p>
-					<p>&nbsp;</p>
-				</div>
-				<div id="cheer">
-					<p>Latest cheer:</p>
-					<p>&nbsp;</p>
-				</div>
-			</div>
+			
+			
 		</footer>
 	</div>
+	<!-- <script>
+		window.onload = () => {
+
+			// download function
+			function download(canvas, filename) {
+
+				/// create an "off-screen" anchor tag
+				var lnk = document.createElement('a');
+
+				/// the key here is to set the download attribute of the a tag
+				lnk.download = filename;
+
+				/// convert canvas content to data-uri for link. When download
+				/// attribute is set the content pointed to by link will be
+				/// pushed as "download" in HTML5 capable browsers
+				lnk.href = canvas.toDataURL();
+
+				let e;
+
+				/// create a "fake" click-event to trigger the download
+				if (document.createEvent) {
+
+					e = document.createEvent("MouseEvents");
+					e.initMouseEvent("click", true, true, window,
+						0, 0, 0, 0, 0, false, false, false,
+						false, 0, null);
+
+					lnk.dispatchEvent(e);
+
+				} else if (lnk.fireEvent) {
+
+					lnk.fireEvent("onclick");
+				}
+			}
+
+			// download canvas
+			window.scrollTo(0, 0);
+			html2canvas(document.querySelector("#wrapper")).then(canvas => {
+				document.body.appendChild(canvas);
+				download(canvas, 'main_generated.png');
+			});
+
+		}
+
+	</script> -->
 </body>
 
 </html>

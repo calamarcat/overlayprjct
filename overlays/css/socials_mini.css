@@ -4,7 +4,7 @@
   align-items: center;
   width: inherit;
   overflow: hidden;
-  padding: 7px;
+  padding: 5px;
 }
 
 @keyframes slidedown {
@@ -74,7 +74,6 @@
 
 #socials #socials-main-wrapper .socials-main-img {
   flex: 1 1 auto;
-
 }
 
 #socials #socials-info-wrapper {
@@ -85,25 +84,26 @@
 }
 
 #socials #socials-info-wrapper #socials-img {
-  margin: 0 10px;
+  margin: 0 5px;
   display: flex;
   flex: 0 0 auto;
 }
 
-#socials #socials-info-wrapper #socials-text,
-#socials #socials-info-wrapper #socials-command {
-  font-size: 24px;
+#socials #socials-info-wrapper #socials-text {
+  font-size: 18px;
   color: white;
   display: flex;
   flex: 2 0 auto;
-  margin-left: 3px;
+  margin-left: 2px;
   word-wrap: break-word;
 }
 
 #socials #socials-info-wrapper #socials-text {
   font-family: 'Lato', 'Bebas Neue', 'Helvetica Neue', sans-serif;
+  overflow: visible;
 }
 
 #socials #socials-info-wrapper #socials-command {
   font-family: monospace, 'Lato', 'Bebas Neue', 'Helvetica Neue', sans-serif;
+  color: white;
 }

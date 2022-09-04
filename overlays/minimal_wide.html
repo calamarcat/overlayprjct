@@ -4,21 +4,49 @@
 <head>
 	<title>CalamarCat Overlays!</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-	
-	<link rel="stylesheet" type="text/css" href="/banners/css/youtube.css">
-	<script src="js/html2canvas.js"></script>
+	<style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+  </style>
+	<link rel="stylesheet" type="text/css" href="/css/minimal_wide.css">
+	<link rel="stylesheet" type="text/css" href="/css/socials_mini.css">
+	<script src="/js_includes/socials.js"></script>
+	<script>
+		window.onload = () => {
+			const socialsElem = document.getElementById('socials');
+			initSocials(socialsElem, false);
+		};
+	</script>
+	<!-- <script src="banners/js/html2canvas.js"></script> -->
 </head>
 
 <body>
 	<div id="wrapper">
-		<img id="logo" src="../images/logo_plain purple.png" />
-		<div id="icons">
-			<img src="../images/icon_twitter purple.png">
-			<img src="../images/icon_youtube purple.png">
-			<img src="../images/discord.png">
-		</div>
-	</div>
+    <header>
+      <div id="logo">
+        <!-- <img src="../images/logo_plain.png"> -->
+      </div>
+    </header>
 
+		<main>
+			<section id="vid">
+				<div><p>&nbsp;</p></div>
+			</section>
+			<section id="chatbg">
+				<div></div>
+			</section>
+		</main>
+
+		<footer>
+			<!-- <div id="icons">
+				<img src="../images/icon_twitter.png">
+				<img src="../images/icon_youtube.png">
+				<img src="../images/discord.png">
+			</div> -->
+			<div id="socials-wrapper">
+				<div id="socials"></div>
+			</div>
+		</footer>
+	</div>
 	<!-- <script>
 		window.onload = () => {
 
@@ -58,7 +86,7 @@
 			window.scrollTo(0, 0);
 			html2canvas(document.querySelector("#wrapper")).then(canvas => {
 				document.body.appendChild(canvas);
-				download(canvas, 'youtubebanner.png');
+				download(canvas, 'minimal_wide_generated.png');
 			});
 
 		}
